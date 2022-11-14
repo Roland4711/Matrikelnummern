@@ -6,7 +6,8 @@ Die sechste Ziffer ist eine *Prüfziffer*.
 In diesem Beispiel werden:
 - Matrikelnummern geprüft (boolean).
 - Prüfziffern von Matrikelnummern berechnet.
-- Matrikelnummern mit korrekten Prüfziffer generieren.
+- zufällige Matrikelnummern mit korrekten Prüfziffer generiert.
+- Matrikelnummern mit vorgegebenen signifikaten Ziffern generiert.
 
 ## Algorithmus
 Algorithmus zur Berechnung der Prüfziffer
