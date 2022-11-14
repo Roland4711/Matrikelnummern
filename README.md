@@ -1,8 +1,12 @@
 # Matrikelnummern
+Übungsprojekt vom Fach Informatik 1, Fachbereich Maschinenbau und Verfahrenstechnik der Hochschule Düsseldorf. 
+<br>**Thema**: Statische Methoden
+
 Die Matrikelnummern der Hochschule Düsseldorf (HSD) haben sechs Ziffern.
 Die ersten fünf Ziffern sind signifikant und werden fortlaufend vergeben.
 Die sechste Ziffer ist eine *Prüfziffer*.
 
+## Einleitung ##
 In diesem Beispiel werden:
 - Matrikelnummern geprüft (boolean).
 - Prüfziffern von Matrikelnummern berechnet.
