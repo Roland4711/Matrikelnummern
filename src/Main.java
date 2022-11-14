@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         int matrNummer = 777777; // Eine sechsstellige Matrikelnummer
@@ -9,6 +11,15 @@ public class Main {
         // Korrekte Prüfziffer berechnen
         int y = berechnePruefziffer(matrNummer);
         System.out.println("Die richtige Prüfziffer der Matrikelnummer " + matrNummer + " lautet: " + y);
+
+        // eine gültige Matrikelnummer erzeugen
+        int rndMatrikelnummer = generiereMatrikelnummer();
+        System.out.println("Zufällig Matrikelnummer mit korrekter Prüfziffer: " + rndMatrikelnummer);
+
+        // signifikanten Ziffern die korrekte Prüfziffer anhängen
+        int erzeugteMatrikelnummer = generiereMatrikelnummer(12345);
+        System.out.println("Aus den signifikatnen Ziffern 12345 wird die Matrikelnnumer " + erzeugteMatrikelnummer);
+
     }
 
     /**
@@ -48,5 +59,31 @@ public class Main {
         int pZiffer = 11 - (gewSumme % 11);
         if (pZiffer >= 10) { pZiffer = 0; }
         return pZiffer;
+    }
+
+    /**
+     * Generiert eine zufällige sechsstellige Matrikelnummer mit Korrekter Prüfziffer
+     * @return eine Matrikelnummer
+     */
+    public static int generiereMatrikelnummer() {
+        Random random = new Random();
+        // Zufällige 5 signifikante Ziffern generieren
+        int signZiffern = random.nextInt(99999 - 10000) + 10000;
+        return generiereMatrikelnummer(signZiffern);
+    }
+
+    /**
+     * Generiert aus einer gegebenen Nummer mit den signifikanten 5 Ziffern eine
+     * korrekte Matrikelnummer mit 6 Ziffern.
+     * Funktioniert auf mit mehr oder weniger signikanten Ziffern, aber bei der
+     * Hochschule Düsseldorf gibt es immer 5 signifikante Ziffern
+     * @param signZiffern Zahl mit den signifikanten n Ziffern
+     * @return Matrikelnummer mit (n+1) Ziffern
+     */
+    public static int generiereMatrikelnummer(int signZiffern) {
+        signZiffern *= 10; // Ziffer Null an die signifikanten Ziffern hängen
+
+        // Richtige Prüfziffer berechnen und addieren
+        return signZiffern + berechnePruefziffer(signZiffern);
     }
 }
