@@ -50,9 +50,9 @@ public class Main {
     static int berechnePruefziffer(int m) {
         int gewSumme = 0;
 
-        for (int Gewichtung = 0; m>0; Gewichtung++) {
+        for (int gewichtung = 0; m>0; gewichtung++) {
             int aktuelleZiffer = m % 10;
-            gewSumme += Gewichtung * aktuelleZiffer;
+            gewSumme += gewichtung * aktuelleZiffer;
             m /= 10;
         }
 
